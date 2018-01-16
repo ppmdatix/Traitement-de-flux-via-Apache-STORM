@@ -4,7 +4,7 @@ import org.apache.storm.topology.TopologyBuilder
 import org.apache.storm.{Config, StormSubmitter}
 import stormTP.operator.test.MyTortoiseBolt
 import stormTP.operator.{ExitBolt, MasterInputStreamSpout}
-
+import stormTP.operator.TP1_operators.Exit2Bolt
 object TopologyT2 {
   def main(args: Array[String]): Unit = {
     val nbExecutors = 1
@@ -22,12 +22,12 @@ object TopologyT2 {
     /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
     builder.setBolt("MyTortoiseBolt", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
     /*Affectation à la topologie du bolt qui émet le flux de sortie, il prendra en input le bolt nofilter*/
-    builder.setBolt("exit", new ExitBolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("MyTortoiseBolt");
+    builder.setBolt("exit", new Exit2Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("MyTortoiseBolt");
 
     /*Création d'une configuration*/
     val config = new Config();
     /*La topologie est soumise à STORM*/
-    StormSubmitter.submitTopology("topoT1", config, builder.createTopology());
+    StormSubmitter.submitTopology("topoT2", config, builder.createTopology());
   }
 
 }

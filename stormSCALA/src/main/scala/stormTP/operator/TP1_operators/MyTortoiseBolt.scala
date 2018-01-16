@@ -15,12 +15,12 @@ class MyTortoiseBolt extends IRichBolt {
     val n_jvalue = JSONUtils.parseJson(n)
     val to = JSONUtils.getList(n_jvalue, "tortoises")
     val matortue = to.filter(p => JSONUtils.getInt(p, "id") == 3)
-    val matortuejson = JSONUtils.runnerFromJSON(matortue(0))
-    val nom = "Gaydon-Peseux"
-    collector.emit(input,new Values(matortuejson.id:java.lang.Long,
-      matortuejson.top:java.lang.Long, nom:java.lang.String,
-      matortuejson.position:java.lang.Integer, matortuejson.nbDevant:java.lang.Integer,
-      matortuejson.nbDerriere:java.lang.Integer,10:java.lang.Integer))
+    val matortuejson = matortue(0)
+    val nom : String = "Gaydon-Peseux"
+    collector.emit(input,new Values(JSONUtils.getLong(matortuejson,"id"):java.lang.Long,
+      JSONUtils.getInt(matortuejson,"top"):java.lang.Long, nom:java.lang.String,
+      JSONUtils.getInt(matortuejson,"position"):java.lang.Integer, JSONUtils.getInt(matortuejson,"nbDevant"):java.lang.Integer,
+      JSONUtils.getInt(matortuejson,"nbDerriere"):java.lang.Integer,10:java.lang.Integer))
   }
 
   override def prepare(stormConf: util.Map[_, _], context: TopologyContext, collector: OutputCollector) = {
@@ -32,6 +32,6 @@ class MyTortoiseBolt extends IRichBolt {
   override def getComponentConfiguration = null
 
   override def declareOutputFields(declarer: OutputFieldsDeclarer) = {
-    declarer.declare(new Fields("id", "top", "nom", "position", "nbAvant", "nbApres", "nbTotal"))
+    declarer.declare(new Fields("id", "top", "nom", "position", "nbDevant", "nbDerriere", "nbTotal"))
   }
 }

@@ -17,8 +17,7 @@ class Exit2Bolt(private val port: Int, ip: String) extends IRichBolt {
     val nom = TupleUtil.stringValue(data,"nom") // probleme probablement ici, en tout cas lié à nom !!
     val nbDevant = TupleUtil.intValue(data,"nbDevant")
     val nbDerriere = TupleUtil.intValue(data,"nbDerriere")
-    val Int = TupleUtil.intValue(data,"Int")
-    val total = TupleUtil.intValue(data,"total")
+    val total = TupleUtil.intValue(data,"nbTotal")
     val position = TupleUtil.intValue(data,"position")
     val top = TupleUtil.longValue(data,"top")
     val runner = new stormTP.core.Runner(id: Long, nom: String, nbDevant: Int, nbDerriere: Int, total: Int, position: Int, top: Long)
