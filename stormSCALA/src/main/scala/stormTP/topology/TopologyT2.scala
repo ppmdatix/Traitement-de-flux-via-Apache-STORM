@@ -22,7 +22,7 @@ object TopologyT2 {
     /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
     builder.setBolt("MyTortoiseBolt", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
     /*Affectation à la topologie du bolt qui émet le flux de sortie, il prendra en input le bolt nofilter*/
-    builder.setBolt("exit", new ExitBolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("MyTortoiseBolt");
+    builder.setBolt("exit", new Exit2Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("MyTortoiseBolt");
 
     /*Création d'une configuration*/
     val config = new Config();
