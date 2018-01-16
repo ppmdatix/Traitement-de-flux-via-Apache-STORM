@@ -11,28 +11,8 @@ class Exit3Bolt(private val port: Int, ip: String) extends IRichBolt {
   val semit = new StreamEmiter(port, ip)
 
   override def execute(input: Tuple) = {
-    val nbDevant = intValue(input, "nbDevant")
-    val nbDerriere = intValue(input, "nbDerriere")
-    val total = intValue(input, "nbTotal")
-    val rang_intermediaire: String = (nbDevant + 1).toString
-    if ( nbDevant + nbDerriere == total){
-        val rang = rang_intermediaire.concat("ex")
-    }
-    else{
-      val rang = rang_intermediaire
-    }
-
-
-    val id = "id: ".concat(input.getValueByField("id").toString)
-    val top = " ,top: ".concat(input.getValueByField("top").toString)
-    val nom = " ,nom: ".concat(input.getValueByField("nom").toString)
-    val nbTotal = " ,nbTotal: ".concat(input.getValueByField("id").toString)
-    val range = " ,rang: ".concat(rang)
-
-
-    val result = id.concat(top.concat(nom.concat(range.concat(nbTotal))))
-
-    semit.send(result)
+    val data = input.getValueByField("json").toString
+    semit.send(data)
     collector.ack(input)
   }
 
