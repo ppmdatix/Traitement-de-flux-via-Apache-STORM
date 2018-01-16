@@ -2,10 +2,10 @@ package stormTP.topology
 
 import org.apache.storm.topology.TopologyBuilder
 import org.apache.storm.{Config, StormSubmitter}
-import stormTP.operator.test.MyTortoiseBolt
-import stormTP.operator.{Exit3Bolt, MasterInputStreamSpout, GiveRankBolt}
+import stormTP.operator.{MasterInputStreamSpout}
+import stormTP.operator.TP1_operators.{MyTortoiseBolt,GiveRankBolt,Exit3Bolt}
 
-object TopologyT2 {
+object TopologyT3 {
   def main(args: Array[String]): Unit = {
     val nbExecutors = 1
     val portINPUT = 9001

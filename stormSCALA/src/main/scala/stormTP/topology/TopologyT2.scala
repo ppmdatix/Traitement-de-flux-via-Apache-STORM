@@ -2,9 +2,8 @@ package stormTP.topology
 
 import org.apache.storm.topology.TopologyBuilder
 import org.apache.storm.{Config, StormSubmitter}
-import stormTP.operator.test.MyTortoiseBolt
-import stormTP.operator.{ExitBolt, MasterInputStreamSpout}
-import stormTP.operator.TP1_operators.Exit2Bolt
+import stormTP.operator.{MasterInputStreamSpout}
+import stormTP.operator.TP1_operators.{Exit2Bolt, MyTortoiseBolt}
 object TopologyT2 {
   def main(args: Array[String]): Unit = {
     val nbExecutors = 1
