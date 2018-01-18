@@ -1,4 +1,4 @@
-package stormTP.operator.test
+package stormTP.operator.TP1_operators
 
 import java.util
 
@@ -13,7 +13,7 @@ import stormTP.TupleUtil
 
 class ComputeBonusBolt extends BaseStatefulBolt[KeyValueState[String, Int]] {
   var kvState: KeyValueState[String, Int] = null
-  var points: Long = 0
+  var points: Int = 0
   var collector: OutputCollector = null
 
   private val POINTS = "points"
@@ -23,34 +23,24 @@ class ComputeBonusBolt extends BaseStatefulBolt[KeyValueState[String, Int]] {
 
       val rang = TupleUtil.stringValue(input,"rang")
 
-      val range = 0
+      var range = 0
 
       if (rang.length() > 2 ){
-        range = rang.dropRight(2).toLong
+        range = rang.dropRight(2).toInt
       }else{
-        range = rang.toLong
+        range = rang.toInt
       }
+      points = points + (10-range)
+      kvState.put(POINTS, points)
 
-      kvState.put(POINTS, points + (9-range))
-
-
-
-    }
-
-
-    val id = TupleUtil.intValue(input,"id")
-    val top = TupleUtil.longValue(input,"top")
+      val id = TupleUtil.longValue(input,"id")
+      val top = TupleUtil.longValue(input,"top")
       val nom = TupleUtil.stringValue(input,"nom")
 
-
-
-    kvState.put(POINTS, points)
-
-    collector.emit(input,new Values(id:java.lang.Long,
-      top:java.lang.Long, nom:java.lang.String,
-      points.toString:java.lang.String))
-
-
+      collector.emit(input,new Values(id:java.lang.Long,
+        top:java.lang.Long, nom:java.lang.String,
+        points.toString:java.lang.String))
+    }
   }
 
   override def initState(state: KeyValueState[String, Int]) = {
