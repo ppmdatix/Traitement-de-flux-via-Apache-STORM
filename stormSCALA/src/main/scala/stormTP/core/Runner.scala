@@ -17,6 +17,7 @@ import org.json4s.native.JsonMethods._
 
 case class Runner(id: Long, nom: String, nbDevant: Int, nbDerriere: Int, total: Int, position: Int, top: Long) {
   var rang: String = ""
+  var points: String = ""
 
   def getJSON_V1(): String = {
     val jsonRepr =
@@ -37,6 +38,15 @@ case class Runner(id: Long, nom: String, nbDevant: Int, nbDerriere: Int, total: 
         ("nom" -> nom) ~
         ("rang" -> rang) ~
         ("total" -> total)
+    compact(render(jsonRepr))
+  }
+
+  def getJSON_V3(): String = {
+    val jsonRepr =
+      ("id" -> id) ~
+        ("top" -> top) ~
+        ("nom" -> nom) ~
+        ("points" -> points)
     compact(render(jsonRepr))
   }
 }
