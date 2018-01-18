@@ -1,6 +1,7 @@
 package stormTP.topology
 
 import org.apache.storm.topology.TopologyBuilder
+import org.apache.storm.topology.base.BaseWindowedBolt.Count
 import org.apache.storm.{Config, StormSubmitter}
 import stormTP.operator.{MasterInputStreamSpout}
 import stormTP.operator.TP1_operators.{MyTortoiseBolt,SpeedBolt,Exit5Bolt}
@@ -23,7 +24,7 @@ object TopologyT5 {
     /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
     builder.setBolt("MyTortoiseBolt", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
 
-    builder.setBolt("SpeedBolt",   new SpeedBolt().withWindow(new Count(10), new Count(5)),   nbExecutors).shuffleGrouping("MyTortoiseBolt");
+    builder.setBolt("SpeedBolt",   new SpeedBolt().withWindow(new Count(10), new Count(5)),nbExecutors).shuffleGrouping("MyTortoiseBolt");
 
     /*Affectation à la topologie du bolt qui émet le flux de sortie, il prendra en input le bolt nofilter*/
     builder.setBolt("exit", new Exit5Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("SpeedBolt");
