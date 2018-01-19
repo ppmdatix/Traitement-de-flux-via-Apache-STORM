@@ -20,11 +20,8 @@ class ComputeBonusBolt extends BaseStatefulBolt[KeyValueState[String, Int]] {
 
   override def execute(input: Tuple) = {
     if ( TupleUtil.longValue(input,"top") % 15 == 0) {
-
       val rang = TupleUtil.stringValue(input,"rang")
-
       var range = 0
-
       if (rang.length() > 2 ){
         range = rang.dropRight(2).toInt
       }else{
@@ -42,17 +39,13 @@ class ComputeBonusBolt extends BaseStatefulBolt[KeyValueState[String, Int]] {
         points.toString:java.lang.String))
     }
   }
-
   override def initState(state: KeyValueState[String, Int]) = {
     kvState = state
     points = kvState.get(POINTS, 0)
   }
-
-
   override def declareOutputFields(declarer: OutputFieldsDeclarer) = {
     declarer.declare(new Fields("id" ,"top" ,"nom" ,"points"))
   }
-
   override def prepare(stormConf: util.Map[_, _], context: TopologyContext, collector: OutputCollector) = {
     this.collector = collector
   }

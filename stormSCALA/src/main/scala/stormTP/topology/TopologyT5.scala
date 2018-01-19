@@ -17,19 +17,11 @@ object TopologyT5 {
 
     /*Création du spout*/
     val spout = new MasterInputStreamSpout(portINPUT, ipmINPUT);
-    /*Création de la topologie*/
     val builder = new TopologyBuilder();
-    /*Affectation à la topologie du spout*/
     builder.setSpout("masterStream", spout);
-    /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
     builder.setBolt("MyTortoiseBolt", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
-
     builder.setBolt("SpeedBolt",   new SpeedBolt().withWindow(new Count(10), new Count(5)),nbExecutors).shuffleGrouping("MyTortoiseBolt");
-
-    /*Affectation à la topologie du bolt qui émet le flux de sortie, il prendra en input le bolt nofilter*/
     builder.setBolt("exit", new Exit5Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("SpeedBolt");
-
-    /*Création d'une configuration*/
     val config = new Config();
     /*La topologie est soumise à STORM*/
     StormSubmitter.submitTopology("topo5", config, builder.createTopology());

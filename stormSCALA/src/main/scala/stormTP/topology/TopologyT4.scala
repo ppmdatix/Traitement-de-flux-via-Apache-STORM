@@ -16,20 +16,11 @@ object TopologyT4 {
 
     /*Création du spout*/
     val spout = new MasterInputStreamSpout(portINPUT, ipmINPUT);
-    /*Création de la topologie*/
     val builder = new TopologyBuilder();
-    /*Affectation à la topologie du spout*/
     builder.setSpout("masterStream", spout);
-    /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
     builder.setBolt("MyTortoiseBolt", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
-
     builder.setBolt("GiveRankBolt",   new GiveRankBolt(),   nbExecutors).shuffleGrouping("MyTortoiseBolt");
-
-
     builder.setBolt("ComputeBonusBolt",   new ComputeBonusBolt(),   nbExecutors).shuffleGrouping("GiveRankBolt");
-
-
-    /*Affectation à la topologie du bolt qui émet le flux de sortie, il prendra en input le bolt nofilter*/
     builder.setBolt("exit", new Exit4Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("ComputeBonusBolt");
 
     /*Création d'une configuration*/

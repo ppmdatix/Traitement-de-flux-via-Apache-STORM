@@ -14,14 +14,10 @@ import org.json4s.native.JsonMethods.{compact, render}
 import org.slf4j.LoggerFactory
 
 class RankEvolutionBolt extends BaseStatefulWindowedBolt[KeyValueState[String, Int]] {
-  // state
-
   private var kvState: KeyValueState[String, Int] = null
   private var collector: OutputCollector = null
   private var LAST_RANG: String = "last_rang"
   private var last_rang: Int = 0
-
-
   override def execute(inputWindow: TupleWindow) = {
 
     val tuples: util.List[Tuple] = inputWindow.get()
@@ -36,7 +32,6 @@ class RankEvolutionBolt extends BaseStatefulWindowedBolt[KeyValueState[String, I
     }else{
       tail_rang_int = tail_rang.toInt
     }
-
     if(tail_rang_int<last_rang){
       progression = "En progression."
     }else if(tail_rang_int==last_rang){
@@ -57,7 +52,6 @@ class RankEvolutionBolt extends BaseStatefulWindowedBolt[KeyValueState[String, I
       top:java.lang.String, nom:java.lang.String,
       progression:java.lang.String))
     }
-
   override def initState(state: KeyValueState[String, Int]) = {
     kvState = state
     last_rang = kvState.get(LAST_RANG, 0)
@@ -65,7 +59,6 @@ class RankEvolutionBolt extends BaseStatefulWindowedBolt[KeyValueState[String, I
   override def declareOutputFields(declarer: OutputFieldsDeclarer) = {
     declarer.declare(new Fields("id" ,"top" ,"nom" ,"progression"))
   }
-
   override def prepare(stormConf: java.util.Map[_, _], context: TopologyContext, collector: OutputCollector) = {
     this.collector = collector
   }

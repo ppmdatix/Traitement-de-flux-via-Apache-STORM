@@ -23,14 +23,7 @@ class ExitInLogBolt(private val port: Int, ip: String) extends IRichBolt {
           ("marcheP1" -> TupleUtil.listValue(input,"marcheP1")) ~
           ("marcheP2" -> TupleUtil.listValue(input,"marcheP2")) ~
           ("marcheP3" -> TupleUtil.listValue(input,"marcheP3"))
-
-
-
-    //val n = input.getValueByField("json").toString
-    //LOG.info("[ExitInLOG] {}", n)
-
     semit.send(compact(render(jsonRepr)))
-
     collector.ack(input)
   }
 

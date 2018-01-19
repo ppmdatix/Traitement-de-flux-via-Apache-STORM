@@ -17,13 +17,9 @@ object TopologyT6 {
 
     /*Création du spout*/
     val spout = new MasterInputStreamSpout(portINPUT, ipmINPUT);
-    /*Création de la topologie*/
     val builder = new TopologyBuilder();
-    /*Affectation à la topologie du spout*/
     builder.setSpout("masterStream", spout);
-    /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
     builder.setBolt("MyTortoiseBolt", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
-
     builder.setBolt("GiveRankBolt",   new GiveRankBolt(),   nbExecutors).shuffleGrouping("MyTortoiseBolt");
     builder.setBolt("RankEvolutionBolt",   new RankEvolutionBolt().withTumblingWindow(new Count(10)).withMessageIdField("top"),   nbExecutors).shuffleGrouping("GiveRankBolt");
 

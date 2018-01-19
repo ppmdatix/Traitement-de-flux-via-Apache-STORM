@@ -17,14 +17,9 @@ object TopologyT3 {
     val spout = new MasterInputStreamSpout(portINPUT, ipmINPUT);
     /*Création de la topologie*/
     val builder = new TopologyBuilder();
-    /*Affectation à la topologie du spout*/
     builder.setSpout("masterStream", spout);
-    /*Affectation à la topologie du bolt qui ne fait rien, il prendra en input le spout localStream*/
     builder.setBolt("MyTortoiseBolt", new MyTortoiseBolt(), nbExecutors).shuffleGrouping("masterStream");
-
     builder.setBolt("GiveRankBolt",   new GiveRankBolt(),   nbExecutors).shuffleGrouping("MyTortoiseBolt");
-
-    /*Affectation à la topologie du bolt qui émet le flux de sortie, il prendra en input le bolt nofilter*/
     builder.setBolt("exit", new Exit3Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping("GiveRankBolt");
 
     /*Création d'une configuration*/
