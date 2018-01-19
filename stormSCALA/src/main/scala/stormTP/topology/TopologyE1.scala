@@ -34,6 +34,6 @@ object TopologyE1 {
     /*
 	   * Call to the topology submitter for storm
 	   */
-    StormSubmitter.submitTopology("topoE1", config, builder.createTopology())
+    StormSubmitter.submitTopology("topoE1-gaydon-peseux", config, builder.createTopology())
   }
 }
