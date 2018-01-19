@@ -33,5 +33,10 @@ object TupleUtil {
   def stringValue(t: Tuple, field: String): String = {
     t.getValueByField(field).toString
   }
+  def listValue(t: Tuple, field: String): List[(String, String)] = {
+    t.getValueByField(field).asInstanceOf[List[(String, String)]]
+
+  }
+
 
 }
