@@ -2,7 +2,8 @@ package stormTP.topology
 
 import org.apache.storm.topology.TopologyBuilder
 import org.apache.storm.{Config, StormSubmitter}
-import stormTP.operator.{ComputePodiumBolt, ExitInLogBolt, HareSpout}
+import stormTP.operator.{HareSpout}
+import stormTP.operator.TP2_operators.{ComputePodiumBolt, ExitInLogBolt}
 
 object TopologyE1 {
   def main(args: Array[String]): Unit = {
@@ -15,8 +16,8 @@ object TopologyE1 {
      */
     val builder = new TopologyBuilder
     builder.setSpout("localBigStream", spout)
-    builder.setBolt("podium", new ComputePodiumBolt, nbExecutors).shuffleGrouping("localBigStream")
-    builder.setBolt("exit", new ExitInLogBolt, nbExecutors).shuffleGrouping("podium")
+    builder.setBolt("ComputePodiumBolt", new ComputePodiumBolt(), nbExecutors).shuffleGrouping("localBigStream")
+    builder.setBolt("ExitInLogBolt", new ExitInLogBolt(), nbExecutors).shuffleGrouping("ComputePodiumBolt")
 
     /*
      * Configuration of metadata of the topology
