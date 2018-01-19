@@ -53,9 +53,6 @@ class ComputeBonusBolt extends BaseStatefulBolt[KeyValueState[String, Int]] {
     declarer.declare(new Fields("id" ,"top" ,"nom" ,"points"))
   }
 
-
-
-
   override def prepare(stormConf: util.Map[_, _], context: TopologyContext, collector: OutputCollector) = {
     this.collector = collector
   }

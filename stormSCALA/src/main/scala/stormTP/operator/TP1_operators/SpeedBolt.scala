@@ -17,17 +17,14 @@ class SpeedBolt extends BaseWindowedBolt {
   override def execute(inputWindow: TupleWindow) = {
     val tuples: util.List[Tuple] = inputWindow.get()
     var head = tuples.get(0)
-    var tail = tuples.get(inputWindow.get().size()-1)
+    var tail = tuples.get(inputWindow.get().size().toInt-1.toInt)
     var head_pos = TupleUtil.intValue(head, "position")
     var tail_pos = TupleUtil.intValue(tail, "position")
     var speed = ((tail_pos.toFloat-head_pos.toFloat)/(inputWindow.get().size().toFloat)).toString
 
-
-    //var head_pos = TupleUtil.longValue(inputWindow.get().head()), 'position')
-    //var tail = TupleUtil.longValue(inputWindow.get().tail()), 'position')
     val id = TupleUtil.longValue(head,"id")
-    val top_1 = TupleUtil.intValue(head,"top").toString
-    val top_2 = TupleUtil.intValue(tail,"top").toString
+    val top_1 = TupleUtil.longValue(head,"top").toString
+    val top_2 = TupleUtil.longValue(tail,"top").toString
     val top = top_1.concat("-".concat(top_2))
     val nom = TupleUtil.stringValue(head,"nom")
 

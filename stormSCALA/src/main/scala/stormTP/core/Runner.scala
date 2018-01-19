@@ -20,6 +20,7 @@ case class Runner(id: Long, nom: String, nbDevant: Int, nbDerriere: Int, total: 
   var points: String = ""
   var top_string: String = ""
   var speed: String = ""
+  var progression: String = ""
 
   def getJSON_V1(): String = {
     val jsonRepr =
@@ -57,6 +58,15 @@ case class Runner(id: Long, nom: String, nbDevant: Int, nbDerriere: Int, total: 
       ("nom" -> nom) ~
       ("top" -> top_string) ~
       ("speed" -> speed)
+    compact(render(jsonRepr))
+  }
+
+  def getJSON_V5(): String = {
+    val jsonRepr =
+      ("id" -> id) ~
+        ("nom" -> nom) ~
+        ("top" -> top_string) ~
+        ("progression" -> progression)
     compact(render(jsonRepr))
   }
 }

@@ -14,10 +14,10 @@ class Exit5Bolt(private val port: Int, ip: String) extends IRichBolt {
 
   override def execute(data: Tuple) = {
     val id = TupleUtil.longValue(data,"id")
-    val nom = TupleUtil.stringValue(data,"nom") // probleme probablement ici, en tout cas lié à nom !!
+    val nom = TupleUtil.stringValue(data,"nom")
     val top = TupleUtil.stringValue(data,"top")
     val speed = TupleUtil.stringValue(data,"speed")
-    val runner = new stormTP.core.Runner(id: Long, nom: String, 0: Int, 0: Int, 0: Int, 0: Int, 0: Long)
+    val runner = new stormTP.core.Runner(id: Long, nom: String, 0: Int, 0: Int, 0: Int, 0: Int, 0.toLong: Long)
 
     runner.speed= speed
     runner.top_string = top
