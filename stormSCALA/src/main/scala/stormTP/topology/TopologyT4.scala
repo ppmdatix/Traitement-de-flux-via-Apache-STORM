@@ -3,7 +3,8 @@ package stormTP.topology
 import org.apache.storm.topology.TopologyBuilder
 import org.apache.storm.{Config, StormSubmitter}
 import stormTP.operator.{MasterInputStreamSpout}
-import stormTP.operator.TP1_operators.{MyTortoiseBolt,GiveRankBolt,Exit3Bolt}
+import stormTP.operator.TP1_operators.{MyTortoiseBolt,GiveRankBolt,Exit4Bolt, ComputeBonusBolt}
+//import stormTP.operator.TP1_operators.
 
 object TopologyT4 {
   def main(args: Array[String]): Unit = {

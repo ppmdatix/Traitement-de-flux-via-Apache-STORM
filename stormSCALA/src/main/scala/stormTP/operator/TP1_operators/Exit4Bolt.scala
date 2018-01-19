@@ -17,7 +17,7 @@ class Exit4Bolt(private val port: Int, ip: String) extends IRichBolt {
     val nom = TupleUtil.stringValue(data,"nom") // probleme probablement ici, en tout cas lié à nom !!
     val points = TupleUtil.stringValue(data,"points")
     val top = TupleUtil.longValue(data,"top")
-    val runner = new stormTP.core.Runner(id: Long, nom: String, 0: Int, 0: Int, total: Int, 0: Int, top: Long)
+    val runner = new stormTP.core.Runner(id: Long, nom: String, 0: Int, 0: Int, 0: Int, 0: Int, top: Long)
 
     runner.points = points
     semit.send(runner.getJSON_V3())
