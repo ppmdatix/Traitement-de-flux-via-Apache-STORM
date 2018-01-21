@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Le lièvre et la tortue - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Osaka,Meiryo,\\30E1\30A4\30EA\30AA,MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,\\5FAE\8EDF\6B63\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,\\5FAE\8EDF\6B63\9ED1UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,\\5FAE\8F6F\96C5\9ED1UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid" style="position: relative;"><h1 id="le-lièvre-et-la-tortue"><a class="anchor hidden-xs" href="#le-lièvre-et-la-tortue" title="le-lièvre-et-la-tortue"><span class="octicon octicon-link"></span></a>Le lièvre et la tortue</h1><div class="alert alert-info">
+<p>Auteurs : <strong>Charles GAYDON, Paul PESEUX</strong><br>
+Date : <strong>19/01/2018</strong><br>
+Cadre : TP Vélocité - Traitement de flux via Apache STORM, dans le cadre du cours de Big Data Analytics du Master Data Science à l’Université Lyon 1.</p>
+</div><h2 id="introduction"><a class="anchor hidden-xs" href="#introduction" title="introduction"><span class="octicon octicon-link"></span></a>Introduction</h2><p>L’objectif de ce TP est, d’après ses auteurs,</p><blockquote>
+<p>" de [nous] familiariser avec les topologies <em>Storm</em> permettant de traiter des flux de données et de [nous] sensibiliser aux problèmes de congestions d’opérateurs qui peuvent apparaître en fonction de l’évolution du débit du flux en entrée. "</p>
+</blockquote><p><strong>L’exercice consistera à déployer un pannel de topologies <em>Storm</em> sur une machine virtuelle, et d’en contrôler le bon fonctionnement</strong> à l’aide de trois outils : l’interface graphique <em>UI</em> proposée par <em>Storm</em>, l’écoute du flux de sortie à l’aide d’un module <em>node.js</em>, et enfin les logs générés dans le cas où le système serait congestionné.</p><p>Nous traiterons dans ce travail deux flux entrants décrivant des courses animalières - courses de tortues pour la première, de lièvres pour la seconde - suivant quatre modalités de traitement :</p><ul>
+<li><em>stateless</em> : action sur une entrée à un instant donné .</li>
+<li><em>stateful</em> : action sur une entrée à un instant donné, avec usage puis mise-à-jour d’un état du système qui fait le lien entre cette donnée et les précédentes.</li>
+<li><em>stateless</em> avec fenêtrage glissant sur les données : action sur les entrées prises sur une fênetre de données (les <em>n</em> dernières valeurs), effectuée toutes les <em>m</em>&lt;<em>n</em> données.</li>
+<li><em>stateful</em> avec fenêtrage sur le temps : action sur des entrées prises sur une fenêtre de temps (pendant les <em>n</em> dernieres unités de temps), effectuée tous les <em>m</em> unités de temps, avec à nouveau la notion d’état mis à jour.</li>
+</ul><p><em>NB</em> : le cadre technique (adresses IP des machines, commandes employées, <em>etc.</em>) est donné dans la Section Annexe, située à la fin du présent rapport. Les morceaux de codes importants sont incorporées dans les parties relatives. De plus tout le projet est réalisé en SCALA.</p><h2 id="1-course-de-tortues"><a class="anchor hidden-xs" href="#1-course-de-tortues" title="1-course-de-tortues"><span class="octicon octicon-link"></span></a>1. Course de tortues</h2><p>Ce flux est à débit réduit, et correspond à une description de la course de tortues donnée à intervals réguliers (de l’ordre de la demi-dizaine de secondes).</p><h3 id="11-flux-d’origine"><a class="anchor hidden-xs" href="#11-flux-d’origine" title="11-flux-d’origine"><span class="octicon octicon-link"></span></a>1.1 Flux d’origine</h3><p>Notre première topologie (<em>cf.</em> Figure 1.1.a) capte ce flux et le renvoit tel quel. Elle est constitué des élements suivants :</p><ul>
+<li>MasterStream : <em>spout</em> de capture du flux ;</li>
+<li>noFilter : <em>bolt</em> qui extrait du flux la description de la course ;</li>
+<li>exit : <em>bolt</em> qui émet cette description sur le port de sortie.</li>
+</ul><p><img src="https://i.imgur.com/5q9c7En.png" alt="" title="Figure 1.1.a : Topology #1 - visualisation de la topologie"><br>
+<strong>Figure 1.1.a : Topologie 1 avec trois éléments</strong></p><p>Il contient un identifiant (<em>id</em>) de tortue, un indice de temps (<em>top</em>), la position de la tortue sur la piste (<em>position</em>), le nombre de compétiteur devant (<em>nbDevant</em>) et derrière (<em>nbDerrière</em>) une tortue, ainsi que le nombre total de tortues:<br>
+<img src="https://i.imgur.com/9AllhkK.png" alt="" title="Figure 1.1.b : Topology #1 - flux de sortie"><br>
+<strong>Figure 1.1.b : logs de sortie de la Topologie 1</strong></p><h3 id="12-filtrage-de-sa-tortue"><a class="anchor hidden-xs" href="#12-filtrage-de-sa-tortue" title="12-filtrage-de-sa-tortue"><span class="octicon octicon-link"></span></a>1.2 Filtrage de sa tortue</h3><h4 id="commentaire"><a class="anchor hidden-xs" href="#commentaire" title="commentaire"><span class="octicon octicon-link"></span></a>Commentaire</h4><p>Cette première opération est <em>stateless</em> ; aucune mémoire des temps précédents n’est conservée. L’objectif ici est de récupérer notre torue (dossard <span class="mathjax"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mn>3</mn></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-4" style="width: 0.669em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.515em; height: 0px; font-size: 122%;"><span style="position: absolute; clip: rect(1.744em 1000.46em 2.718em -999.997em); top: -2.559em; left: 0em;"><span class="mrow" id="MathJax-Span-5"><span class="mn" id="MathJax-Span-6" style="font-family: STIXGeneral-Regular;">3</span></span><span style="display: inline-block; width: 0px; height: 2.564em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>3</mn></math></span></span><script type="math/tex" id="MathJax-Element-2">3</script></span>). En effet le flux est pour l’instant composé des informations concernant toutes les torutes. Nous intercalons donc un <em>Bolt</em> appelé <em>MyTortoiseBolt</em> qui nous permet de filtrer notre tortue et de modifier certains de ses attributs. Par exemple nous rajoutons l’information “nom: Gaydon-Peseux”.<br>
+Le <em>masterStream</em> s’occupe toujours de capter le flux et l’<em>exitBolt</em> permet toujours de sortir un noueau flux. Ainsi <em>MyTortoiseBolt</em> est un bolt intermédiaire.<br>
+<img src="https://i.imgur.com/f5MyD0E.png" alt="" title="Figure 1.2.a : Topology #2 - visualisation de la topologie"><br>
+<strong>Figure 1.2.a : Topologie 2 avec trois éléments</strong></p><p>Finalement l’information retournée est constituée de : identifiant de la tortue(<em>id</em>), indice de temps (<em>top</em>), dénomination de la tortue (<em>nom</em>), la position (<em>position</em>), le nombrede tortues devant (<em>nbDevant</em>), le nombre de tortues derrière (<em>nb Derriere</em>) et le nombre total de tortues (<em>total</em>) (cf. Figure 1.2.b)</p><p><img src="https://i.imgur.com/IQVewRG.png" alt="" title="Figure 1.2.b : Topology #2 - flux de sortie"><br>
+<strong>Figure 1.2.b : logs de sortie de la Topologie 2</strong></p><p>La difficulté majeure lors de l’implémentation de ce bolt fut de se familiariser avec le format des inputs qui transitent entre les bolts. Une fois cette bataille gagnée, l’utilisation des outils pré-codés a permis de travailler sereinement avec les différents inputs.</p><h4 id="code"><a class="anchor hidden-xs" href="#code" title="code"><span class="octicon octicon-link"></span></a>Code</h4><ul>
+<li>dans TopologyT2 :</li>
+</ul><pre><code class="scala hljs">val spout = <span class="hljs-keyword">new</span> MasterInputStreamSpout(portINPUT, ipmINPUT);
+val builder = <span class="hljs-keyword">new</span> TopologyBuilder();
+builder.setSpout(<span class="hljs-string">"masterStream"</span>, spout);
+builder.setBolt(<span class="hljs-string">"MyTortoiseBolt"</span>, <span class="hljs-keyword">new</span> MyTortoiseBolt(), nbExecutors).shuffleGrouping(<span class="hljs-string">"masterStream"</span>);
+builder.setBolt(<span class="hljs-string">"exit"</span>, <span class="hljs-keyword">new</span> Exit2Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping(<span class="hljs-string">"MyTortoiseBolt"</span>);
+</code></pre><ul>
+<li>dans MyTortoiseBolt :</li>
+</ul><pre><code class="scala hljs">  override <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">execute</span><span class="hljs-params">(<span class="hljs-symbol">input:</span> Tuple)</span></span> = {
+    val n = input.getValueByField(<span class="hljs-string">"json"</span>).toString
+    val n_jvalue = JSONUtils.parseJson(n)
+    val to = JSONUtils.getList(n_jvalue, <span class="hljs-string">"tortoises"</span>)
+    val matortue = to.filter(p =&gt; JSONUtils.getInt(p, <span class="hljs-string">"id"</span>) == <span class="hljs-number">3</span>)
+    val matortuejson = matortue(<span class="hljs-number">0</span>)
+    val nom : String = <span class="hljs-string">"Gaydon-Peseux"</span>
+    collector.emit(input,new Values(JSONUtils.getLong(matortuejson,<span class="hljs-string">"id"</span>)<span class="hljs-symbol">:java</span>.lang.Long,
+      JSONUtils.getInt(matortuejson,<span class="hljs-string">"top"</span>)<span class="hljs-symbol">:java</span>.lang.Long, <span class="hljs-symbol">nom:</span>java.lang.String,
+      JSONUtils.getInt(matortuejson,<span class="hljs-string">"position"</span>)<span class="hljs-symbol">:java</span>.lang.Integer, JSONUtils.getInt(matortuejson,<span class="hljs-string">"nbDevant"</span>)<span class="hljs-symbol">:java</span>.lang.Integer,
+      JSONUtils.getInt(matortuejson,<span class="hljs-string">"nbDerriere"</span>)<span class="hljs-symbol">:java</span>.lang.Integer,<span class="hljs-number">10</span><span class="hljs-symbol">:java</span>.lang.Integer))
+  }
+  override <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">declareOutputFields</span><span class="hljs-params">(<span class="hljs-symbol">declarer:</span> OutputFieldsDeclarer)</span></span> = {
+    declarer.declare(new Fields(<span class="hljs-string">"id"</span>, <span class="hljs-string">"top"</span>, <span class="hljs-string">"nom"</span>, <span class="hljs-string">"position"</span>, <span class="hljs-string">"nbDevant"</span>, <span class="hljs-string">"nbDerriere"</span>, <span class="hljs-string">"nbTotal"</span>))
+  }
+}
+</code></pre><h3 id="13-calcul-du-rang"><a class="anchor hidden-xs" href="#13-calcul-du-rang" title="13-calcul-du-rang"><span class="octicon octicon-link"></span></a>1.3 Calcul du rang</h3><h4 id="commentaire1"><a class="anchor hidden-xs" href="#commentaire1" title="commentaire1"><span class="octicon octicon-link"></span></a>Commentaire</h4><p>Ayant extrait notre tortue, nous souhaitons calculer son rang dans la course, en prenant en compte le cas où elle serait <em>ex-aequo</em> avec une autre. Notre troisième topologie (cf. Figure 1.3.a) contient les éléments précédents, auxquels se rajoute le <em>bolt</em> GiveRankBolt qui fait le calcul du rang de notre tortue. Cette opération est <em>stateless</em> également.</p><p><img src="https://i.imgur.com/ARl0sqa.png" alt="" title="Figure 1.3.a : Topology #3 - visualisation de la topologie"><br>
+<strong>Figure 1.3.a : Topologie 3 avec quatre éléments</strong></p><p>On ne conserve qu’une partie de l’information : identifiant de la tortue(<em>id</em>), indice de temps (<em>top</em>), dénomination de la tortue (<em>nom</em>), le rang nouvellement calculé (<em>rang</em>) et le nombre total de tortues (<em>total</em>) (cf. Figure 1.3.b)</p><p><img src="https://i.imgur.com/Nvnnu8k.png" alt="" title="Figure 1.3.b : Topology #3 - flux de sortie"><br>
+<strong>Figure 1.3.b : logs de sortie de la Topologie 3</strong></p><h4 id="code1"><a class="anchor hidden-xs" href="#code1" title="code1"><span class="octicon octicon-link"></span></a>Code</h4><ul>
+<li>dans TopologyT3 :</li>
+</ul><pre><code class="scala hljs">val spout = <span class="hljs-keyword">new</span> MasterInputStreamSpout(portINPUT, ipmINPUT);
+val builder = <span class="hljs-keyword">new</span> TopologyBuilder();
+builder.setSpout(<span class="hljs-string">"masterStream"</span>, spout);
+builder.setBolt(<span class="hljs-string">"MyTortoiseBolt"</span>, <span class="hljs-keyword">new</span> MyTortoiseBolt(), nbExecutors).shuffleGrouping(<span class="hljs-string">"masterStream"</span>);
+builder.setBolt(<span class="hljs-string">"GiveRankBolt"</span>,   <span class="hljs-keyword">new</span> GiveRankBolt(),   nbExecutors).shuffleGrouping(<span class="hljs-string">"MyTortoiseBolt"</span>);
+builder.setBolt(<span class="hljs-string">"exit"</span>, <span class="hljs-keyword">new</span> Exit3Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping(<span class="hljs-string">"GiveRankBolt"</span>);
+</code></pre><ul>
+<li>dans GiveRankBolt :</li>
+</ul><pre><code class="scala hljs">override def <span class="hljs-keyword">execute</span>(<span class="hljs-keyword">input</span>: Tuple) = {
+    val nbDevant = TupleUtil.intValue(<span class="hljs-keyword">input</span>, <span class="hljs-string">"nbDevant"</span>)
+    val nbDerriere = TupleUtil.intValue(<span class="hljs-keyword">input</span>, <span class="hljs-string">"nbDerriere"</span>)
+    val total = TupleUtil.intValue(<span class="hljs-keyword">input</span>, <span class="hljs-string">"nbTotal"</span>)
+    val rang_intermediaire: <span class="hljs-keyword">String</span> = (nbDevant + <span class="hljs-number">1</span>).toString
+    val <span class="hljs-keyword">id</span> = TupleUtil.longValue(<span class="hljs-keyword">input</span>, <span class="hljs-string">"id"</span>)
+    val nom = TupleUtil.stringValue(<span class="hljs-keyword">input</span>,<span class="hljs-string">"nom"</span>)
+    val top = TupleUtil.longValue(<span class="hljs-keyword">input</span>,<span class="hljs-string">"top"</span>)
+    val rang = <span class="hljs-keyword">if</span> ( nbDevant + nbDerriere != (total<span class="hljs-number">-1</span>)){
+      rang_intermediaire.concat(<span class="hljs-string">"ex"</span>)
+    }
+    <span class="hljs-keyword">else</span>{
+      rang_intermediaire
+    }
+    collector.emit(<span class="hljs-keyword">input</span>,<span class="hljs-keyword">new</span> <span class="hljs-keyword">Values</span>(<span class="hljs-keyword">id</span>:java.lang.Long,
+      top:java.lang.Long, nom:java.lang.String,
+      rang:java.lang.String, total:java.lang.Integer))
+}
+</code></pre><h3 id="14-calcul-de-points-bonus"><a class="anchor hidden-xs" href="#14-calcul-de-points-bonus" title="14-calcul-de-points-bonus"><span class="octicon octicon-link"></span></a>1.4 Calcul de points bonus</h3><h4 id="commentaire2"><a class="anchor hidden-xs" href="#commentaire2" title="commentaire2"><span class="octicon octicon-link"></span></a>Commentaire</h4><p>Nous voulons ici mettre en place un calcul de points bonus en fonction du rang au cours de la course. Il est ainsi nécessaire de garder en mémoire l’attribution du décompte des points bonus, l’opération est donc <em>stateful</em>. L’idée est d’utiliser les sorties du bolt précédent, <em>GiveRankBolt</em>, afin d’attribuer des points en fonction du rang.</p><p>Ainsi on vient intercaler un nouveau bolt entre <em>GiveRankBolt</em> et le bolt de sortie (une petite modification de ce dernier est donc nécessaire).</p><p>La Figure 1.4.a permet de visualiser cette topologie.</p><p><img src="https://i.imgur.com/ZXMpDr5.png" alt="" title="Figure 1.4.a : Topology #4 - visualisation de la topologie"><br>
+<strong>Figure 1.4.a : Topologie 4 avec six éléments</strong></p><p>Il est nécessaire d’initialiser ce bolt nommé <em>ComputeBonusBolt</em> et de lui préciser qu’il doit garder cette valeur en mémoire. Le bonus attriué est directement lié au rang calculé par le bolt précédent.</p><p>On décide ici de ne s’intéresser uniquement à notre propre tortue, on laisse donc dans notre topolgie <em>MyTortoiseBolt</em> en amont. Il n’y a ici aucune notion de fenêtrage.</p><p>Voici le type d’information retournée: identifiant de la tortue(<em>id</em>), indice de temps (<em>top</em>), dénomination de la tortue (<em>nom</em>), et les bonus nouvellement calculés (<em>points</em>) (cf. Figure 1.4.b)</p><p><img src="https://i.imgur.com/7HJWg9N.png" alt="" title="Figure 1.4.b : Topology #4 - flux de sortie"><br>
+<strong>Figure 1.4.b : logs de sortie de la Topologie 4</strong></p><p>Ici la principale difficulté fût d’apprendre à travailler avec la notion de mémoire du bolt. Après quelques problèmes avec l’initialisation, nous avons finalement réussi à faire tourner notre topologie:</p><h4 id="code2"><a class="anchor hidden-xs" href="#code2" title="code2"><span class="octicon octicon-link"></span></a>Code</h4><ul>
+<li>dans TopologyT4 :</li>
+</ul><pre><code class="scala hljs">val spout = <span class="hljs-keyword">new</span> MasterInputStreamSpout(portINPUT, ipmINPUT);
+val builder = <span class="hljs-keyword">new</span> TopologyBuilder();
+builder.setSpout(<span class="hljs-string">"masterStream"</span>, spout);
+builder.setBolt(<span class="hljs-string">"MyTortoiseBolt"</span>, <span class="hljs-keyword">new</span> MyTortoiseBolt(), nbExecutors).shuffleGrouping(<span class="hljs-string">"masterStream"</span>);
+builder.setBolt(<span class="hljs-string">"GiveRankBolt"</span>,   <span class="hljs-keyword">new</span> GiveRankBolt(),   nbExecutors).shuffleGrouping(<span class="hljs-string">"MyTortoiseBolt"</span>);
+builder.setBolt(<span class="hljs-string">"ComputeBonusBolt"</span>,   <span class="hljs-keyword">new</span> ComputeBonusBolt(),   nbExecutors).shuffleGrouping(<span class="hljs-string">"GiveRankBolt"</span>);
+builder.setBolt(<span class="hljs-string">"exit"</span>, <span class="hljs-keyword">new</span> Exit4Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping(<span class="hljs-string">"ComputeBonusBolt"</span>);
+</code></pre><ul>
+<li>ComputeBonusBolt :</li>
+</ul><pre><code class="scala hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComputeBonusBolt</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseStatefulBolt</span>[<span class="hljs-title">KeyValueState</span>[<span class="hljs-title">String</span>, <span class="hljs-title">Int</span>]] </span>{
+  <span class="hljs-keyword">var</span> kvState: KeyValueState[String, Int] = <span class="hljs-keyword">null</span>
+  <span class="hljs-keyword">var</span> points: Int = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">var</span> collector: OutputCollector = <span class="hljs-keyword">null</span>
+
+  <span class="hljs-keyword">private</span> val POINTS = <span class="hljs-string">"points"</span>
+
+  override def execute(input: Tuple) = {
+    <span class="hljs-keyword">if</span> ( TupleUtil.longValue(input,<span class="hljs-string">"top"</span>) % <span class="hljs-number">15</span> == <span class="hljs-number">0</span>) {
+
+      val rang = TupleUtil.stringValue(input,<span class="hljs-string">"rang"</span>)
+
+      <span class="hljs-keyword">var</span> range = <span class="hljs-number">0</span>
+
+      <span class="hljs-keyword">if</span> (rang.length() &gt; <span class="hljs-number">2</span> ){
+        range = rang.dropRight(<span class="hljs-number">2</span>).toInt
+      }<span class="hljs-keyword">else</span>{
+        range = rang.toInt
+      }
+      points = points + (<span class="hljs-number">10</span>-range)
+      kvState.put(POINTS, points)
+
+      val id = TupleUtil.longValue(input,<span class="hljs-string">"id"</span>)
+      val top = TupleUtil.longValue(input,<span class="hljs-string">"top"</span>)
+      val nom = TupleUtil.stringValue(input,<span class="hljs-string">"nom"</span>)
+
+      collector.emit(input,<span class="hljs-keyword">new</span> Values(id:java.lang.Long,
+        top:java.lang.Long, nom:java.lang.String,
+        points.toString:java.lang.String))
+    }
+  }
+
+  override def initState(state: KeyValueState[String, Int]) = {
+    kvState = state
+    points = kvState.get(POINTS, <span class="hljs-number">0</span>)
+  }
+}
+
+</code></pre><h3 id="15-calcul-de-la-vitesse-moyenne"><a class="anchor hidden-xs" href="#15-calcul-de-la-vitesse-moyenne" title="15-calcul-de-la-vitesse-moyenne"><span class="octicon octicon-link"></span></a>1.5 Calcul de la vitesse moyenne</h3><h4 id="commentaire3"><a class="anchor hidden-xs" href="#commentaire3" title="commentaire3"><span class="octicon octicon-link"></span></a>Commentaire</h4><p>Nous voulons maintenant calculer la vitesse moyenne qu’a eu notre tortue sur les 10 derniers temps, et ce avec une actualisation tous les cinq temps. C’est donc un opérateur <em>stateless</em> avec fenêtrage sur les données et nommé  qui vient se placer à la suite de l’opérateur MyTortoiseBolt (cf. Figure 1.5.a).<br>
+<img src="https://i.imgur.com/4yNUjOV.png" alt="" title="Figure 1.5.a : Topology #5 - visualisation de la topologie"><br>
+<strong>Figure 1.5.a : Topologie 5 avec quatre éléments</strong></p><p>Cette fois on ne conserve à chaque calcul que quatre valeurs : l’identifiant de la tortue (<em>id</em>), son nom (<em>nom</em>), l’intervalle de temps sur lequel la vitesse moyenne est calculée (<em>top</em>, donnant les indices de début et de fin de fenêtre) (cf. Figure 1.5.b).</p><p><img src="https://i.imgur.com/0B1qiGx.png" alt="" title="Figure 1.5.b : Topology #5 - flux de sortie"><br>
+<strong>Figure 1.5.b : logs de sortie de la Topologie 5</strong></p><h4 id="code3"><a class="anchor hidden-xs" href="#code3" title="code3"><span class="octicon octicon-link"></span></a>Code</h4><ul>
+<li>dans TopologyT5 :</li>
+</ul><pre><code class="scala hljs">val spout = <span class="hljs-keyword">new</span> MasterInputStreamSpout(portINPUT, ipmINPUT);
+val builder = <span class="hljs-keyword">new</span> TopologyBuilder();
+builder.setSpout(<span class="hljs-string">"masterStream"</span>, spout);
+builder.setBolt(<span class="hljs-string">"MyTortoiseBolt"</span>, <span class="hljs-keyword">new</span> MyTortoiseBolt(), nbExecutors).shuffleGrouping(<span class="hljs-string">"masterStream"</span>);
+builder.setBolt(<span class="hljs-string">"SpeedBolt"</span>,   <span class="hljs-keyword">new</span> SpeedBolt().withWindow(<span class="hljs-keyword">new</span> Count(<span class="hljs-number">10</span>), <span class="hljs-keyword">new</span> Count(<span class="hljs-number">5</span>)),nbExecutors).shuffleGrouping(<span class="hljs-string">"MyTortoiseBolt"</span>);
+builder.setBolt(<span class="hljs-string">"exit"</span>, <span class="hljs-keyword">new</span> Exit5Bolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping(<span class="hljs-string">"SpeedBolt"</span>);
+</code></pre><ul>
+<li>dans SpeedBolt</li>
+</ul><pre><code class="scala hljs">override def <span class="hljs-keyword">execute</span>(inputWindow: TupleWindow) = {
+    val tuples: util.List[Tuple] = inputWindow.get()
+    <span class="hljs-keyword">var</span> <span class="hljs-keyword">head</span> = tuples.get(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">var</span> tail = tuples.get(inputWindow.get().size().toInt<span class="hljs-number">-1.</span>toInt)
+    <span class="hljs-keyword">var</span> head_pos = TupleUtil.intValue(<span class="hljs-keyword">head</span>, <span class="hljs-string">"position"</span>)
+    <span class="hljs-keyword">var</span> tail_pos = TupleUtil.intValue(tail, <span class="hljs-string">"position"</span>)
+    <span class="hljs-keyword">var</span> speed = ((tail_pos.toFloat-head_pos.toFloat)/(inputWindow.get().size().toFloat)).toString
+
+    val <span class="hljs-keyword">id</span> = TupleUtil.longValue(<span class="hljs-keyword">head</span>,<span class="hljs-string">"id"</span>)
+    val top_1 = TupleUtil.longValue(<span class="hljs-keyword">head</span>,<span class="hljs-string">"top"</span>).toString
+    val top_2 = TupleUtil.longValue(tail,<span class="hljs-string">"top"</span>).toString
+    val top = top_1.concat(<span class="hljs-string">"-"</span>.concat(top_2))
+    val nom = TupleUtil.stringValue(<span class="hljs-keyword">head</span>,<span class="hljs-string">"nom"</span>)
+
+    collector.emit(inputWindow.get(),<span class="hljs-keyword">new</span> <span class="hljs-keyword">Values</span>(<span class="hljs-keyword">id</span>:java.lang.Long,
+      nom:java.lang.String,top:java.lang.String,
+      speed:java.lang.String))
+}
+</code></pre><h3 id="16-evolution-du-rang"><a class="anchor hidden-xs" href="#16-evolution-du-rang" title="16-evolution-du-rang"><span class="octicon octicon-link"></span></a>1.6 Evolution du rang</h3><h4 id="commentaire4"><a class="anchor hidden-xs" href="#commentaire4" title="commentaire4"><span class="octicon octicon-link"></span></a>Commentaire</h4><p>Nous souhaitons maintenant savoir l’évolution de la situation de notre tortue dans la course, et déterminons pour cela, toutes les 30 secondes, si notre tortue a gagné ou perdu des places au terme des dix dernières secondes, comparativement à la fenêtre précédente. Le rang précédent doit donc êre conservé en référence, actualisé à chaque nouveau calcul.<br>
+C’est donc un opérateur <em>stateful</em> avec fenêtrage sur le temps, nommé SpeedBolt, qui vient se placer derrière le <em>bolt</em> GiveRankBolt de la partie 1.3 (cf. Figure 1.6.a).<br>
+<img src="https://i.imgur.com/GVLS9Gx.png" alt="" title="Figure 1.6.a : Topology #6 - visualisation de la topologie"><br>
+<strong>Figure 1.6.a : logs de sortie de la Topologie 5</strong></p><p>Le flux de sortie est similaire à la fréquence près à celui de la section précédente, et la vitesse moyenne est remplacée par la variable <em>progression</em> prenant trois valeurs décrivant l’évolution du rang : “En régression.”, “Constant.” et “En progression” (cf. Figure 1.6.b).<br>
+<img src="https://i.imgur.com/bVtJXBa.png" alt="" title="Figure 1.6.b : Topology #6 - flux de sortie"><br>
+<strong>Figure 1.6.b : Topologie 6 avec six éléments</strong></p><p>En ayant précedemment réalisé les autres bolts, la mise en place de cette topologie fut relativement simple, les concepts ayant tous déjà maitrisés dans les topologies précédentes.</p><h4 id="code4"><a class="anchor hidden-xs" href="#code4" title="code4"><span class="octicon octicon-link"></span></a>Code</h4><ul>
+<li>dans TopologyT6 :</li>
+</ul><pre><code class="scala hljs">val nbExecutors = <span class="hljs-number">1</span>
+[...]
+val spout = <span class="hljs-keyword">new</span> MasterInputStreamSpout(portINPUT, ipmINPUT);
+val builder = <span class="hljs-keyword">new</span> TopologyBuilder();
+builder.setSpout(<span class="hljs-string">"masterStream"</span>, spout);
+builder.setBolt(<span class="hljs-string">"MyTortoiseBolt"</span>, <span class="hljs-keyword">new</span> MyTortoiseBolt(), nbExecutors).shuffleGrouping(<span class="hljs-string">"masterStream"</span>);
+builder.setBolt(<span class="hljs-string">"GiveRankBolt"</span>,   <span class="hljs-keyword">new</span> GiveRankBolt(),   nbExecutors).shuffleGrouping(<span class="hljs-string">"MyTortoiseBolt"</span>);
+builder.setBolt(<span class="hljs-string">"RankEvolutionBolt"</span>, <span class="hljs-keyword">new</span> RankEvolutionBolt().withTumblingWindow(<span class="hljs-keyword">new</span> Count(<span class="hljs-number">10</span>)).withMessageIdField(<span class="hljs-string">"top"</span>),nbExecutors).shuffleGrouping(<span class="hljs-string">"GiveRankBolt"</span>);
+</code></pre><ul>
+<li>RankEvolutionBolt :</li>
+</ul><pre><code class="scala hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RankEvolutionBolt</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseStatefulWindowedBolt</span>[<span class="hljs-title">KeyValueState</span>[<span class="hljs-title">String</span>, <span class="hljs-title">Int</span>]] </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> kvState: KeyValueState[String, Int] = <span class="hljs-keyword">null</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> collector: OutputCollector = <span class="hljs-keyword">null</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> LAST_RANG: String = <span class="hljs-string">"last_rang"</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">var</span> last_rang: Int = <span class="hljs-number">0</span>
+  override def execute(inputWindow: TupleWindow) = {
+
+    val tuples: util.<span class="hljs-keyword">List</span>[Tuple] = inputWindow.get()
+    <span class="hljs-keyword">var</span> head = tuples.get(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">var</span> tail = tuples.get(inputWindow.get().size()<span class="hljs-number">-1</span>)
+    <span class="hljs-keyword">var</span> tail_rang = TupleUtil.stringValue(tail, <span class="hljs-string">"rang"</span>)
+    <span class="hljs-keyword">var</span> progression: String = <span class="hljs-string">""</span>
+
+    <span class="hljs-keyword">var</span> tail_rang_int: Int = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">if</span> (tail_rang.length() &gt; <span class="hljs-number">2</span> ){
+      tail_rang_int = tail_rang.dropRight(<span class="hljs-number">2</span>).toInt
+    }<span class="hljs-keyword">else</span>{
+      tail_rang_int = tail_rang.toInt
+    }
+    <span class="hljs-keyword">if</span>(tail_rang_int&lt;last_rang){
+      progression = <span class="hljs-string">"En progression."</span>
+    }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(tail_rang_int==last_rang){
+      progression = <span class="hljs-string">"Constant."</span>
+    }<span class="hljs-keyword">else</span>{
+      progression = <span class="hljs-string">"En régression."</span>
+    }
+    val id = TupleUtil.longValue(head,<span class="hljs-string">"id"</span>)
+    val top_1 = TupleUtil.longValue(head,<span class="hljs-string">"top"</span>).toString
+    val top_2 = TupleUtil.longValue(tail,<span class="hljs-string">"top"</span>).toString
+    val top = top_1.concat(<span class="hljs-string">"-"</span>.concat(top_2))
+    val nom = TupleUtil.stringValue(head,<span class="hljs-string">"nom"</span>)
+
+    last_rang = tail_rang_int+<span class="hljs-number">0</span>
+    kvState.put(LAST_RANG, last_rang)
+
+    collector.emit(inputWindow.get(),<span class="hljs-keyword">new</span> Values(id:java.lang.Long,
+      top:java.lang.String, nom:java.lang.String,
+      progression:java.lang.String))
+    }
+  override def initState(state: KeyValueState[String, Int]) = {
+    kvState = state
+    last_rang = kvState.get(LAST_RANG, <span class="hljs-number">0</span>)
+  }
+  override def declareOutputFields(declarer: OutputFieldsDeclarer) = {
+    declarer.<span class="hljs-keyword">declare</span>(<span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"id"</span> ,<span class="hljs-string">"top"</span> ,<span class="hljs-string">"nom"</span> ,<span class="hljs-string">"progression"</span>))
+  }
+  override def prepare(stormConf: java.util.Map[_, _], context: TopologyContext, collector: OutputCollector) = {
+    this.collector = collector
+  }
+}
+</code></pre><ul>
+<li>dans Exit6Bolt :</li>
+</ul><pre><code class="scala hljs">  override def <span class="hljs-keyword">execute</span>(<span class="hljs-keyword">data</span>: Tuple) = {
+    val <span class="hljs-keyword">id</span> = TupleUtil.longValue(<span class="hljs-keyword">data</span>,<span class="hljs-string">"id"</span>)
+    val nom = TupleUtil.stringValue(<span class="hljs-keyword">data</span>,<span class="hljs-string">"nom"</span>)
+    val top = TupleUtil.stringValue(<span class="hljs-keyword">data</span>,<span class="hljs-string">"top"</span>)
+    val progression = TupleUtil.stringValue(<span class="hljs-keyword">data</span>,<span class="hljs-string">"progression"</span>)
+    val runner = <span class="hljs-keyword">new</span> stormTP.core.Runner(<span class="hljs-keyword">id</span>: <span class="hljs-keyword">Long</span>, nom: <span class="hljs-keyword">String</span>, <span class="hljs-number">0</span>: <span class="hljs-built_in">Int</span>, <span class="hljs-number">0</span>: <span class="hljs-built_in">Int</span>, <span class="hljs-number">0</span>: <span class="hljs-built_in">Int</span>, <span class="hljs-number">0</span>: <span class="hljs-built_in">Int</span>, <span class="hljs-number">0.</span>toLong: <span class="hljs-keyword">Long</span>)
+
+    runner.progression= progression
+    runner.top_string = top
+
+    semit.send(runner.getJSON_V5())
+    collector.ack(<span class="hljs-keyword">data</span>)
+  }
+</code></pre><h2 id="2-course-de-lièvres"><a class="anchor hidden-xs" href="#2-course-de-lièvres" title="2-course-de-lièvres"><span class="octicon octicon-link"></span></a>2. Course de lièvres</h2><p>Ayant bien experimenté avec les différentes modalités d’opérateurs proposées sous <em>Storm</em>, nous allons maintenant changer de flux entrant, et considérer un contexte similaire au précédent - une course de lièvres - dont les observations seront cette fois bien plus fréquentes. Nous verrons que les ressources de calcul se retrouveront rapidement dépassées. Et tenterons d’effacer ce congestionnement en augmentant le parallélisme des acteurs.</p><h3 id="21-podium"><a class="anchor hidden-xs" href="#21-podium" title="21-podium"><span class="octicon octicon-link"></span></a>2.1 Podium</h3><h4 id="commentaire5"><a class="anchor hidden-xs" href="#commentaire5" title="commentaire5"><span class="octicon octicon-link"></span></a>Commentaire</h4><p>Pour évaluer la congestion due au temps de calcul et non celle que de mauvaises performances réseau pourraient générer, nous générons cette fois sur notre machine virtuelle le flux d’entrée, par un <em>spout</em> nommé <em>localBigStream</em>.</p><p>La tâche qui se révélera coûteuse face à la charge d’entrée est cette fois la suivante : déterminer les lièvres étant sur le podium, c’est-à-dire dont le rang est inférieur ou égal à trois (<em>ex-aequo</em> acceptés). Ce calcul s’effectue dans un nouvel opérateur <em>stateless</em> nommé <em>ComputePodiumBolt</em>, situé entre le <em>spout</em> d’entrée et l’opérateur de sortie <em>ExitInLogBolt</em> (cf. Figure 2.1.a). Ce dernier aura par ailleurs pour tâche d’enregistrer dans les <em>logs</em> de la topologie l’identifiant du message bloquant ainsi que le temps au bout duquel il y a eu échec de son passage.<br>
+<img src="https://i.imgur.com/vddIK7u.png" alt="" title="Figure 2.1.a : Topology #E1 - visualisation de la topologie"></p><p>La topologie semble dans un premier temps effectuer ses calculs sans problème, et l’aspect du résultat est donné Figure 2.1.b.<br>
+<img src="https://i.imgur.com/9yfRSpK.png" alt="" title="Figure 2.1.b : Topology #E1 - flux de sortie avant congestion"></p><p>Mais au bout d’une cinquantaine de pas de temps, la sortie se fige (cf. Figure 2.1.c). Il y a congestion de l’opérateur ComputePodiumBolt, qui n’arrive pas à traiter à temps chaque tuple reçu et ne transmet de ce fait plus le flux à l’opérateur de sortie.<br>
+<img src="https://i.imgur.com/VWT2Ksl.png" alt="" title="Figure 2.1.c : Topology #E1 - flux de sortie après congestion"></p><p>L’étude des logs (fichier <kbd>worker.log</kbd>) permet de localiser dans le temps ce phénomène de congestion : le premier échec de passage de message survient environ 75 secondes après le lancement de la topologie, et est suivi instantanément de nombreuse répliques (cf. Figure 2.1.d).</p><p><img src="https://i.imgur.com/uwFCT0r.png" alt="" title="Figure 2.1.d : Topology #E6 - 10 premiers échecs, enregistrés dans les logs de la topologie"></p><h4 id="code5"><a class="anchor hidden-xs" href="#code5" title="code5"><span class="octicon octicon-link"></span></a>Code</h4><ul>
+<li>dans Topologie E1 :</li>
+</ul><pre><code class="scala hljs">val nbExecutors = <span class="hljs-number">1</span>
+[...]
+val spout = <span class="hljs-keyword">new</span> HareSpout(System.currentTimeMillis())
+val builder = <span class="hljs-keyword">new</span> TopologyBuilder
+builder.setSpout(<span class="hljs-string">"localBigStream"</span>, spout)
+builder.setBolt(<span class="hljs-string">"ComputePodiumBolt"</span>, <span class="hljs-keyword">new</span> ComputePodiumBolt(), nbExecutors).shuffleGrouping(<span class="hljs-string">"localBigStream"</span>)
+builder.setBolt(<span class="hljs-string">"ExitInLogBolt"</span>, <span class="hljs-keyword">new</span> ExitInLogBolt(portOUTPUT, ipmOUTPUT), nbExecutors).shuffleGrouping(<span class="hljs-string">"ComputePodiumBolt"</span>)
+</code></pre><ul>
+<li>ComputePodiumBolt :</li>
+</ul><pre><code class="scala hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ComputeBonusBolt</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BaseStatefulBolt</span>[<span class="hljs-title">KeyValueState</span>[<span class="hljs-title">String</span>, <span class="hljs-title">Int</span>]] </span>{
+  <span class="hljs-keyword">var</span> kvState: KeyValueState[String, Int] = <span class="hljs-keyword">null</span>
+  <span class="hljs-keyword">var</span> points: Int = <span class="hljs-number">0</span>
+  <span class="hljs-keyword">var</span> collector: OutputCollector = <span class="hljs-keyword">null</span>
+
+  <span class="hljs-keyword">private</span> val POINTS = <span class="hljs-string">"points"</span>
+
+  override def execute(input: Tuple) = {
+    <span class="hljs-keyword">if</span> ( TupleUtil.longValue(input,<span class="hljs-string">"top"</span>) % <span class="hljs-number">15</span> == <span class="hljs-number">0</span>) {
+      val rang = TupleUtil.stringValue(input,<span class="hljs-string">"rang"</span>)
+      <span class="hljs-keyword">var</span> range = <span class="hljs-number">0</span>
+      <span class="hljs-keyword">if</span> (rang.length() &gt; <span class="hljs-number">2</span> ){
+        range = rang.dropRight(<span class="hljs-number">2</span>).toInt
+      }<span class="hljs-keyword">else</span>{
+        range = rang.toInt
+      }
+      points = points + (<span class="hljs-number">10</span>-range)
+      kvState.put(POINTS, points)
+
+      val id = TupleUtil.longValue(input,<span class="hljs-string">"id"</span>)
+      val top = TupleUtil.longValue(input,<span class="hljs-string">"top"</span>)
+      val nom = TupleUtil.stringValue(input,<span class="hljs-string">"nom"</span>)
+
+      collector.emit(input,<span class="hljs-keyword">new</span> Values(id:java.lang.Long,
+        top:java.lang.Long, nom:java.lang.String,
+        points.toString:java.lang.String))
+    }
+  }
+  override def initState(state: KeyValueState[String, Int]) = {
+    kvState = state
+    points = kvState.get(POINTS, <span class="hljs-number">0</span>)
+  }
+  override def declareOutputFields(declarer: OutputFieldsDeclarer) = {
+    declarer.<span class="hljs-keyword">declare</span>(<span class="hljs-keyword">new</span> Fields(<span class="hljs-string">"id"</span> ,<span class="hljs-string">"top"</span> ,<span class="hljs-string">"nom"</span> ,<span class="hljs-string">"points"</span>))
+  }
+  override def prepare(stormConf: util.Map[_, _], context: TopologyContext, collector: OutputCollector) = {
+    this.collector = collector
+  }
+}
+</code></pre><h3 id="22-augmentation-du-parallélisme"><a class="anchor hidden-xs" href="#22-augmentation-du-parallélisme" title="22-augmentation-du-parallélisme"><span class="octicon octicon-link"></span></a>2.2 Augmentation du parallélisme</h3><p>Nous tentons maintenant d’augmenter le parallélisme de l’opérateur ComputePodiumBolt, en lui associant quatre <em>workers</em> et quatre <em>executors</em>.<br>
+Les sorties ne sont pas forcément dans leur ordre d’arrivée,  mais la topologie semble effectuer ses calculs correctement… jusqu’à ce que les quatre <em>workers</em> ne parviennent plus non plus à assurer la cadence, et échouent l’un après l’autre à passer leur calcul à l’opérateur de sortie, qui finit par rester bloqué sur un unique indice de temps.<br>
+<img src="https://i.imgur.com/IHsSOTG.png" alt="" title="Figure 2.2.a : Topology #E6 avec 4 workers et 4 executors - flux de sortie après congestion successive des workers"><br>
+Cette congestion survient après un temps un peu plus long qu’avant, d’environ 80 secondes (Figure 2.2.a)<br>
+<img src="https://i.imgur.com/JukAyVG.png" alt="" title="Figure 2.2.b : Topology #E6 avec 4 workers et 4 executors - 10 premiers échecs, enregistrés dans les logs de la topologie"></p><p>Il semble donc que l’augmentation proposée du parallélisme n’ait pas réussi à alléger suffisament la charge.</p><h3 id="23-ajout-d’un-superviseur"><a class="anchor hidden-xs" href="#23-ajout-d’un-superviseur" title="23-ajout-d’un-superviseur"><span class="octicon octicon-link"></span></a>2.3 Ajout d’un superviseur</h3><p>Non traité.</p><h2 id="annexe-cadre-technique"><a class="anchor hidden-xs" href="#annexe-cadre-technique" title="annexe-cadre-technique"><span class="octicon octicon-link"></span></a>Annexe - cadre technique</h2><p>Les IP des deux machines virtuelles, le numéro de dossard de notre tortue et les IP:port d’entrée et de sortie du flux sont les suivants :</p><ul>
+<li>IP_Princ : <kbd>192.168.76.141 </kbd></li>
+<li>IP_Ses : <kbd>192.168.76.143</kbd></li>
+<li>Dossard : 3</li>
+<li>IP_Multicast_input : <kbd>224.0.0.1:9001</kbd></li>
+<li>IP_Multicast_output : <kbd>225.0.1.3:9002</kbd></li>
+</ul><p>La connexion à la machine virtuelle se fait avec la commande : <code>ssh -i pedabdcloud.pem ubuntu@192.168.76.141</code><br>
+Le lancement des différents programme nécessaire au lancement de la topologie se fait avec les commandes suivantes :</p><pre><code>cdzk ; ./zkServer.sh start ;
+cdst ; ./storm nimbus
+cdst ; ./storm ui
+cdst ; ./storm supervisor
+</code></pre><p>L’accès à l’interface graphique de <em>Storm</em> se fait à l’adresse : <kbd>192.168.76.141:8080 </kbd><br>
+L’écoute du flux de sortie se fait par la commande : <code>node main.js 225.0.1.3</code>.<br>
+Une topologie se lance avec la commande : <code>cdst ; ./storm jar /home/ubuntu/SCALA/stormTPX.jar stormTP.topology.TopologyTX 1 3</code></p><div class="resize-sensor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: 0s; width: 100000px; height: 100000px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav"><li class=""><a href="#le-lièvre-et-la-tortue">Le lièvre et la tortue</a><ul class="nav"><li class=""><a href="#introduction">Introduction</a></li><li><a href="#1-course-de-tortues">1. Course de tortues</a><ul class="nav"><li><a href="#11-flux-d’origine">1.1 Flux d’origine</a></li><li><a href="#12-filtrage-de-sa-tortue">1.2 Filtrage de sa tortue</a></li><li><a href="#13-calcul-du-rang">1.3 Calcul du rang</a></li><li><a href="#14-calcul-de-points-bonus">1.4 Calcul de points bonus</a></li><li><a href="#15-calcul-de-la-vitesse-moyenne">1.5 Calcul de la vitesse moyenne</a></li><li><a href="#16-evolution-du-rang">1.6 Evolution du rang</a></li></ul></li><li><a href="#2-course-de-lièvres">2. Course de lièvres</a><ul class="nav"><li><a href="#21-podium">2.1 Podium</a></li><li><a href="#22-augmentation-du-parallélisme">2.2 Augmentation du parallélisme</a></li><li><a href="#23-ajout-d’un-superviseur">2.3 Ajout d’un superviseur</a></li></ul></li><li><a href="#annexe-cadre-technique">Annexe - cadre technique</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav"><li class=""><a href="#le-lièvre-et-la-tortue">Le lièvre et la tortue</a><ul class="nav"><li class=""><a href="#introduction">Introduction</a></li><li><a href="#1-course-de-tortues">1. Course de tortues</a><ul class="nav"><li><a href="#11-flux-d’origine">1.1 Flux d’origine</a></li><li><a href="#12-filtrage-de-sa-tortue">1.2 Filtrage de sa tortue</a></li><li><a href="#13-calcul-du-rang">1.3 Calcul du rang</a></li><li><a href="#14-calcul-de-points-bonus">1.4 Calcul de points bonus</a></li><li><a href="#15-calcul-de-la-vitesse-moyenne">1.5 Calcul de la vitesse moyenne</a></li><li><a href="#16-evolution-du-rang">1.6 Evolution du rang</a></li></ul></li><li><a href="#2-course-de-lièvres">2. Course de lièvres</a><ul class="nav"><li><a href="#21-podium">2.1 Podium</a></li><li><a href="#22-augmentation-du-parallélisme">2.2 Augmentation du parallélisme</a></li><li><a href="#23-ajout-d’un-superviseur">2.3 Ajout d’un superviseur</a></li></ul></li><li><a href="#annexe-cadre-technique">Annexe - cadre technique</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
